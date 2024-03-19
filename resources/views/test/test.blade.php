@@ -1,5 +1,5 @@
 <x-app-layout>
-    test
+    test1212
     <div>
         <form method="get" action="{{ route('test.index') }}">
             @csrf
