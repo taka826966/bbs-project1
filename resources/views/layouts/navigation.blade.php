@@ -13,7 +13,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex">
-                    @auth
+                    @auth <!-- ユーザー -->
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         ホーム
                     </x-nav-link>
@@ -37,7 +37,7 @@
                             ログアウト
                         </x-nav-link>
                     </form>
-                    @else
+                    @else <!-- ゲスト -->
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         ホーム
                     </x-nav-link>
@@ -69,7 +69,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            @auth
+            @auth <!-- ユーザー -->
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 ホーム
             </x-responsive-nav-link>
@@ -93,7 +93,7 @@
                     {{ __('Log Out') }}
                 </x-responsive-nav-link>
             </form>
-            @else
+            @else <!-- ゲスト -->
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 ホーム
             </x-responsive-nav-link>

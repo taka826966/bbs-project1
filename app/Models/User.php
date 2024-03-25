@@ -43,10 +43,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    // Threadへリレーション
     public function threads() {
         return $this->hasMany(Thread::class);
     }
 
+    // Postへリレーション
     public function posts() {
         return $this->hasMany(Post::class);
     }

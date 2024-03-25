@@ -12,9 +12,10 @@ class Post extends Model
     protected $fillable = [
         'thread_id',
         'comment',
-        'user_id'
+        'user_id',
     ];
 
+    // Userへリレーション
     public function user() {
         return $this->belongsTo(User::class);
     }

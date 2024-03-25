@@ -3,7 +3,7 @@
         home
         <img src="{{asset('img/big_logo.png')}}" alt="">
         <img src="{{asset('img/title.png')}}" alt="" width="20%">
-        @auth
+        @auth <!-- ユーザー用 -->
             <p>
                 ようこそ、{{ Auth::user()->name }}さん
             </p>
@@ -23,7 +23,7 @@
                     </x-primary-button>
                 </a>
             </div>
-        @else
+        @else <!-- ゲスト用 -->
             <p>
                 ようこそ
             </p>

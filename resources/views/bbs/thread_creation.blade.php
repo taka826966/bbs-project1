@@ -1,8 +1,10 @@
 <x-app-layout>
     thread_creation
     <div>
+        <!-- スレッド作成フォーム -->
         <form method="post" action="{{ route('thread.create') }}">
             @csrf
+            <!-- ジャンル選択 -->
             <div>
                 <label for="genre_id">ジャンル</label>
                 <select class="text-black" name="genre_id">
@@ -13,6 +15,7 @@
                 </select>
             </div>
 
+            <!-- スレッドタイトル入力 -->
             <div>
                 <label for="title">タイトル</label>
                 <input type="text" class="text-black" name="title">

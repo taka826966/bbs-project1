@@ -12,13 +12,15 @@ class Thread extends Model
     protected $fillable = [
         'title',
         'genre_id',
-        'user_id'
+        'user_id',
     ];
 
+    // Userへリレーション
     public function user() {
         return $this->belongsTo(User::class);
     }
 
+    // Postへリレーション 最終投稿日時取得のため
     public function latestPost()
     {
         return $this->hasOne(Post::class)->latest();

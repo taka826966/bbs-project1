@@ -45,34 +45,34 @@ Route::get('language/{locale}', function ($locale) {
     return redirect()->back();
 });
 
-// bbs home
+// bbs ホーム
 Route::get('bbs/home', [HomeController::class, 'home'])->name('home');
 
-// bbs search_word
+// bbs ワード検索
 Route::get('bbs/search_word', [SearchController::class, 'searchWord'])->name('search.word');
 
-// bbs search_genre
+// bbs ジャンル検索
 Route::get('bbs/search_genre', [SearchController::class, 'searchGenre'])->name('search.genre');
 
-// bbs read
+// bbs スレッド閲覧
 Route::get('bbs/read{thread}', [ReadController::class, 'read'])->name('read');
 
 Route::delete('bbs/read{thread}', [ReadController::class, 'delete'])->name('delete');
 
-// bbs thread_creation
+// bbs スレッド作成
 Route::get('bbs/thread_creation', [ThreadCreationController::class, 'thread_creation'])->name('thread_creation');
 
 Route::post('bbs/thread_creation', [ThreadCreationController::class, 'create'])->name('thread.create');
 
-// bbs thread_edit
+// bbs スレッド編集
 Route::get('bbs/thread_edit{thread}', [ThreadEditController::class, 'thread_edit'])->name('thread_edit');
 
 Route::patch('bbs/thread_edit{thread}', [ThreadEditController::class, 'update'])->name('update');
 
-// bbs post_creation
+// bbs コメント作成
 Route::get('bbs/post_creation{thread}', [PostCreationController::class, 'post_creation'])->name('post_creation');
 
 Route::post('bbs/post_creation{thread}', [PostCreationController::class, 'create'])->name('post.create');
 
-// テスト用
+// bbs テスト用
 Route::get('test', [TestController::class, 'index'])->name('test.index');
