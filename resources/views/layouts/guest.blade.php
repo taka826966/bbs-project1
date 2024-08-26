@@ -14,17 +14,19 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
-
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
+    <body>
+        <div class="flex flex-col min-h-screen">
+            <header class="p-3 bg-blue-950">
+                @include('layouts.navigation')
+            </header>
+            <main class="flex-grow p-3 text-white bg-black">
+                <div class="w-full sm:max-w-lg mx-auto my-10 p-4 sm:p-8 bg-white shadow-md overflow-hidden sm:rounded-lg text-black">
+                    {{ $slot }}
+                </div>
+            </main>
+            <footer class="px-3 py-5 bg-gray-600 text-white text-sm text-center">
+                &copy; BLACK CATALK. 2024.
+            </footer> 
         </div>
     </body>
 </html>

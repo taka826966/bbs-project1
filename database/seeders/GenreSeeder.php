@@ -13,7 +13,7 @@ class GenreSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Genre::create([
-            'name' => '旅行'
+            'name' => 'その他'
         ]);
     }
 }

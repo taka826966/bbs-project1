@@ -14,16 +14,15 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="">
-        <div class="flex flex-col min-h-screen bg-black">
-            @include('layouts.navigation')
-            <header class="p-3 bg-indigo-900">
-                header
+    <body>
+        <div class="flex flex-col min-h-screen">
+            <header class="p-3 bg-blue-950">
+                @include('layouts.navigation')
             </header>
-            <main class="flex-grow p-3 text-white">
+            <main class="flex-grow p-3 text-white bg-black">
                 {{ $slot }}
             </main>
-            <footer class="px-3 py-5 bg-gray-700 text-sm text-center">
+            <footer class="px-3 py-5 bg-gray-600 text-white text-sm text-center">
                 &copy; BLACK CATALK. 2024.
             </footer> 
         </div>

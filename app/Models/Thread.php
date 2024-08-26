@@ -21,8 +21,11 @@ class Thread extends Model
     }
 
     // Postへリレーション 最終投稿日時取得のため
-    public function latestPost()
-    {
+    public function latestPost() {
         return $this->hasOne(Post::class)->latest();
+    }
+
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 }

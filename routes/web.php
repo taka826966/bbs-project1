@@ -9,6 +9,7 @@ use App\Http\Controllers\ThreadCreationController;
 use App\Http\Controllers\ThreadEditController;
 use App\Http\Controllers\PostCreationController;
 use App\Http\Controllers\TestController;
+use App\Models\Thread;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,20 +58,20 @@ Route::get('bbs/search_genre', [SearchController::class, 'searchGenre'])->name('
 // bbs スレッド閲覧
 Route::get('bbs/read{thread}', [ReadController::class, 'read'])->name('read');
 
-Route::delete('bbs/read{thread}', [ReadController::class, 'delete'])->name('delete');
+Route::delete('bbs/read{thread}/post/{post}', [ReadController::class, 'delete'])->name('delete');
 
 // bbs スレッド作成
-Route::get('bbs/thread_creation', [ThreadCreationController::class, 'thread_creation'])->name('thread_creation');
+Route::get('bbs/thread_creation', [ThreadCreationController::class, 'thread_creation'])->name('thread_creation')->middleware('auth');
 
 Route::post('bbs/thread_creation', [ThreadCreationController::class, 'create'])->name('thread.create');
 
 // bbs スレッド編集
-Route::get('bbs/thread_edit{thread}', [ThreadEditController::class, 'thread_edit'])->name('thread_edit');
+Route::get('bbs/thread_edit{thread}', [ThreadEditController::class, 'thread_edit'])->name('thread_edit')->middleware('auth', 'admin');
 
 Route::patch('bbs/thread_edit{thread}', [ThreadEditController::class, 'update'])->name('update');
 
 // bbs コメント作成
-Route::get('bbs/post_creation{thread}', [PostCreationController::class, 'post_creation'])->name('post_creation');
+Route::get('bbs/post_creation{thread}', [PostCreationController::class, 'post_creation'])->name('post_creation')->middleware('auth');
 
 Route::post('bbs/post_creation{thread}', [PostCreationController::class, 'create'])->name('post.create');
 
